@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEdit, faTrash, faClose } from '@fortawesome/free-solid-svg-icons';
 //code
 const TodoForm = () => {
   const [todos, setTodos] = useState([]);
@@ -67,6 +67,10 @@ const TodoForm = () => {
     setEditintex(index);
 
   }
+  const finishTodo = ()=>
+  {
+
+  }
 
   return (
     <div className="container">
@@ -106,6 +110,8 @@ const TodoForm = () => {
                     <div className="editremovebutton">
                     <button onClick={() => startEdit(index)}> <FontAwesomeIcon icon={faEdit} /></button>
                     <button onClick={() => deleteTodo(index)}><FontAwesomeIcon icon={faTrash} /></button>
+                    <button onClick={() => finishTodo(index)}><FontAwesomeIcon icon={faClose} /></button>
+
                     </div>
                     
                   </li>
